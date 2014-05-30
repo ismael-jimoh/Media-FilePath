@@ -65,6 +65,20 @@
 			}
 		});
 	}
+	
+	function scanCode(){
+		cordova.plugins.barcodeScanner.scan(
+		  function (result) {
+			  alert("We got a barcode\n" +
+					"Result: " + result.text + "\n" +
+					"Format: " + result.format + "\n" +
+					"Cancelled: " + result.cancelled);
+		  }, 
+		  function (error) {
+			  alert("Scanning failed: " + error);
+		  }
+	   );
+	}
 
     </script>
 	<style type="text/css">
@@ -87,5 +101,6 @@
 			<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
 		</video>
 	</P>
+	<p><button onclick="scanCode();">Scan Code</button></p>
   </body>
 </html>
