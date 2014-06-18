@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.example"
+        id          = "com.phonegap.pgbsample"
         versionCode = "10" 
         version     = "1.0.0" >
 
@@ -65,6 +65,11 @@
 	<gap:plugin name="org.apache.cordova.vibration" />
 	
 	<gap:plugin name="com.phonegap.plugins.barcodescanner" version="1.1.0" />
+	
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+		<param name="APP_ID" value="595859647188251" />
+		<param name="APP_NAME" value="PhoneGap 3.3 Example" />
+	</gap:plugin>
 	
 	<access origin="*" />
 
