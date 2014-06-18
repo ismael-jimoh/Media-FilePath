@@ -79,6 +79,10 @@
 		  }
 	   );
 	}
+	
+	function nextPage(){
+		window.open("indexAudioMedia.html");
+	}
 
     </script>
 	<style type="text/css">
@@ -91,6 +95,7 @@
   </head>
   <body>
 	<button onclick="openBrowser();">Open InappBrowser</button><br>
+	<button onclick="nextPage();">Next Page to Test InAppBrowser</button><br>
 	<button onclick="openWebIntent();">Launch WebIntent</button><br>
 	<button onclick="window.plugins.insomnia.keepAwake()">keep awake</button><br><br>
 	<a onclick="openBrowser()" href="#">Open InappBrowser</a><br>
