@@ -28,7 +28,7 @@
 	<preference name="AllowInlineMediaPlayback" value="true"/>
 	<preference name="SplashScreenDelay" value="7000"/>
 	
-	<preference name="KeepRunning" value="false"/>
+	<preference name="KeepRunning" value="true"/>
 	
 	<icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
 	<icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />

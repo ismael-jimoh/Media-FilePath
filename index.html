@@ -45,7 +45,7 @@
     }
 	
 	function openBrowser(){
-		iabRef = window.open('https://www.facebook.com/', '_system', 'location=yes');
+		iabRef = window.open('https://www.facebook.com/', '_blank', 'location=yes,closebuttoncaption=Close');
         iabRef.addEventListener('loadstart', iabLoadStart);
         iabRef.addEventListener('loadstop', iabLoadStop);
         iabRef.addEventListener('loaderror', iabLoadError);
