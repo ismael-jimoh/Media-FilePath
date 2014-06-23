@@ -4,7 +4,6 @@
     <title>InAppBrowser.removeEventListener Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-	<script type="text/javascript" charset="utf-8" src="webintent.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -45,7 +44,7 @@
     }
 	
 	function openBrowser(){
-		iabRef = window.open('https://www.facebook.com/', '_blank', 'location=yes,closebuttoncaption=Close');
+		iabRef = window.open('https://www.facebook.com/', '_blank', 'location=yes,closebuttoncaption=CloseApp');
         iabRef.addEventListener('loadstart', iabLoadStart);
         iabRef.addEventListener('loadstop', iabLoadStop);
         iabRef.addEventListener('loaderror', iabLoadError);
