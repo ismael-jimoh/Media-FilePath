@@ -8,10 +8,18 @@
 
     // Wait for device API libraries to load
     //
-	function onLoad(){
-		document.addEventListener("deviceready", onDeviceReady, false);
-	}
-    // Global InAppBrowser reference
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
+	
+	// device APIs are available
+    //
+    function onDeviceReady() {
+         alert("device ready");
+		 setInterval(function(){alert("Hello")},3000);
+		 setInterval(function(){console.log("Hello")},3000);
+    }
+    
+	// Global InAppBrowser reference
     var iabRef = null;
 
     function iabLoadStart(event) {
@@ -33,16 +41,6 @@
          iabRef.removeEventListener('loaderror', iabLoadError);
          iabRef.removeEventListener('exit', iabClose);
     }
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-         alert("device ready");
-		 //StatusBar.backgroundColorByName("red");
-		 //window.plugins.insomnia.keepAwake()
-		 setInterval(function(){alert("Hello")},3000);
-		 setInterval(function(){console.log("Hello")},3000);
-    }
 	
 	function openBrowser(){
 		iabRef = window.open('https://www.facebook.com/', '_blank', 'location=yes,closebuttoncaption=CloseApp');
@@ -55,7 +53,6 @@
 	function openWebIntent(){
 		alert("Web Intent");
 		var url= "";
-		//window.plugins.webintent.startActivity({action: window.plugins.webintent.ACTION_VIEW,url: 'geo:0,0?q=' + address}, function() {}, function() {alert('Failed to open URL via Android Intent')};);
 		window.plugins.webintent.onNewIntent(function(url) {
 			if(url !== "") {
 				// url is the url that was passed to onNewIntent
@@ -99,14 +96,14 @@
 	</style>
   </head>
   <body onload="onLoad()">
-	<br><br><br>
+	<br>
 	<button onclick="openBrowser();">Open InappBrowser</button><br>
 	<button onclick="nextPage();">Next Page to Test InAppBrowser</button><br>
 	<button onclick="openFB();">open FaceBook Sign In Testpage </button><br>
 	<button onclick="openWebIntent();">Launch WebIntent</button><br>
 	<button onclick="window.plugins.insomnia.keepAwake()">keep awake</button><br><br>
 	<a onclick="openBrowser()" href="#">Open InappBrowser</a><br>
-	<a  href="indexDownload2.html">Download Page</a><br>
+	<a href="indexDownload2.html">Download Page</a><br>
 	<p>Testing in app browser and device ready with Hydration.</p>
 	<p>Now Ensuring that my CSS, HTML and JavaScript are updated by Hydration.</p>
 	<P>
