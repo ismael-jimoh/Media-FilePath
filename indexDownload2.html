@@ -20,7 +20,7 @@
     }
     
     function download() {
-		console.log("In Download Function")
+		console.log("In Download Function");
         var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
         var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
 		console.log(remoteFile +"  "+ localFileName);
@@ -50,7 +50,7 @@
  
 <body onload="init();">
 	<br><br>
-    <a href="#" onclick="download();">Download and display image</a>
+    <a href="#" onclick="download()">Download and display image</a>
     <img src="" id="dwnldImg" style="display: none"/>
 </body>
 </html>
