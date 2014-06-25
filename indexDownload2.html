@@ -20,15 +20,19 @@
     }
     
     function download() {
+		console.log("In Download Function")
         var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
         var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
+		console.log(remoteFile +"  "+ localFileName);
         
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
             fileSystem.root.getFile(localFileName, {create: true, exclusive: false}, function(fileEntry) {
                 var localPath = fileEntry.toURL();
+				console.log(localPath);
                 var ft = new FileTransfer();
                 ft.download(remoteFile,
                     localPath, function(entry) {
+						console.log("ft.download finally here");
                         var dwnldImg = document.getElementById("dwnldImg");
                         dwnldImg.src = entry.toURL();
                         dwnldImg.style.visibility = "visible";
