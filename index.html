@@ -8,8 +8,9 @@
 
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
+	function onLoad(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
     // Global InAppBrowser reference
     var iabRef = null;
 
@@ -97,7 +98,7 @@
 		}
 	</style>
   </head>
-  <body>
+  <body onload="onLoad()">
 	<br><br><br>
 	<button onclick="openBrowser();">Open InappBrowser</button><br>
 	<button onclick="nextPage();">Next Page to Test InAppBrowser</button><br>
