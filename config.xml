@@ -73,7 +73,7 @@
 		<param name="APP_NAME" value="PhoneGap 3.3 Example - Test1" />
 	</gap:plugin>
 	
-	<gap:plugin name="nl.x-services.plugins.insomnia" version="4.0.1" />
+	<gap:plugin name="nl.x-services.plugins.insomnia" version="4.0.0" />
 	
 	<access origin="*" />
 
