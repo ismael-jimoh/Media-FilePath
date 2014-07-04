@@ -3,7 +3,7 @@
   <head>
     <title>InAppBrowser.removeEventListener Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -43,7 +43,7 @@
     }
 	
 	function openBrowser(){
-		iabRef = window.open('https://www.facebook.com/', '_blank', 'location=yes,closebuttoncaption=CloseApp');
+		iabRef = window.open('https://www.facebook.com/', '_system', 'location=yes,closebuttoncaption=CloseApp');
         iabRef.addEventListener('loadstart', iabLoadStart);
         iabRef.addEventListener('loadstop', iabLoadStop);
         iabRef.addEventListener('loaderror', iabLoadError);
