@@ -30,6 +30,8 @@
 	
 	<preference name="KeepRunning" value="true"/>
 	
+	<icon src="icon.png"/>
+	
 	<icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
 	<icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
 	<icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
