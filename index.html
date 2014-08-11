@@ -17,6 +17,8 @@
          alert("device ready");
 		 setInterval(function(){alert("Hello")},3000);
 		 setInterval(function(){console.log("Hello")},3000);
+		 pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
     }
     
 	// Global InAppBrowser reference
@@ -85,6 +87,34 @@
 	function openFB(){
 		window.open("indexFB.html");
 	}
+	
+	function capturePhoto() {
+      // Take picture using device camera and retrieve image as base64-encoded string
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+    }
+	
+	function onPhotoDataSuccess(imageData) {
+      // Uncomment to view the base64-encoded image data
+      // console.log(imageData);
+
+      // Get image handle
+      //
+      var smallImage = document.getElementById('smallImage');
+
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The in-line CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+    }
+	
+	function onFail(message) {
+      alert('Failed because: ' + message);
+    }
 
     </script>
 	<style type="text/css">
@@ -118,5 +148,7 @@
 		</video>
 	</P>
 	<p><button onclick="scanCode();">Scan Code</button></p>
+	<p><button onclick="capturePhoto();">Take Picture</button></p>
+	<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
   </body>
 </html>
