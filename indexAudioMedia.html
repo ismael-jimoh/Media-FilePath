@@ -10,12 +10,17 @@
         // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
+		document.addEventListener("backbutton",onBackButton, false);
 
         // device APIs are available
         //
         function onDeviceReady() {
             playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
         }
+		
+		function onBackButton(){
+			window.history.back()
+		}
 
         // Audio player
         //
