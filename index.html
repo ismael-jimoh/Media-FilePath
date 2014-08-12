@@ -52,6 +52,14 @@
         iabRef.addEventListener('exit', iabClose);
 	}
 	
+	function openInAppBrowser(){
+		iabRef = window.open('https://www.facebook.com/', '_blank', 'location=yes,closebuttoncaption=CloseApp');
+        iabRef.addEventListener('loadstart', iabLoadStart);
+        iabRef.addEventListener('loadstop', iabLoadStop);
+        iabRef.addEventListener('loaderror', iabLoadError);
+        iabRef.addEventListener('exit', iabClose);
+	}
+	
 	function openWebIntent(){
 		alert("Web Intent");
 		var url= "";
@@ -133,7 +141,7 @@
 	<button onclick="openWebIntent();">Launch WebIntent</button><br>
 	<button onclick="window.plugins.insomnia.keepAwake()">keep awake</button><br>
 	<button onclick="window.plugins.insomnia.allowSleepAgain()">allow sleep again</button><br><br>
-	<a onclick="openBrowser()" href="#">Open InappBrowser</a><br>
+	<a onclick="openInAppBrowser()" href="#">Open InappBrowser</a><br>
 	<a href="indexDownload2.html">Download Page</a><br>
 	<p>Testing in app browser and device ready with Hydration.</p>
 	<p>Now Ensuring that my CSS, HTML and JavaScript are updated by Hydration.</p>
