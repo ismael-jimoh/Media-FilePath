@@ -32,7 +32,13 @@
         function playAudio(src) {
             if (my_media == null) {
                 // Create Media object from src
-                my_media = new Media(src, onSuccess, onError);
+				if(device.platform=="Android"){
+					mySrc='android_assets/www/'+src;
+				}
+				else{
+					mySrc=src;
+				}
+                my_media = new Media(mySrc, onSuccess, onError);
             } // else play current audio
             // Play audio
             my_media.play();
@@ -69,10 +75,10 @@
         // Stop audio
         //
         function stopAudio() {
+			my_media.release();
             if (my_media) {
                 my_media.stop();
             }
-			my_media.release();
             clearInterval(mediaTimer);
             mediaTimer = null;
         }
