@@ -16,6 +16,7 @@
         //
         function onDeviceReady() {
 			alert("Device is ready on this page");
+			my_media.release();
         }
 		
 		function onBackButton(){
@@ -29,11 +30,11 @@
 
         // Play audio
         //
-        function playAudio(src) {
+        function playAudio(src) {			
             if (my_media == null) {
                 // Create Media object from src
 				if(device.platform=="Android"){
-					mySrc='android_assets/www/'+src;
+					mySrc='file:///android_assets/www/'+src;
 				}
 				else{
 					mySrc=src;
