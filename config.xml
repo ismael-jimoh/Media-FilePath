@@ -32,10 +32,10 @@
 	
 	<icon src="icon.png"/>
 	
-	<icon src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-	<icon src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-	<icon src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
-	<icon src="xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
+	<icon src="icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+	<icon src="icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+	<icon src="icon/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<icon src="icon/android/xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
 	
 	<gap:splash src="splash.png"/>
 	

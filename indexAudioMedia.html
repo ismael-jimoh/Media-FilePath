@@ -15,7 +15,7 @@
         // device APIs are available
         //
         function onDeviceReady() {
-            playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+			alert("Device is ready on this page");
         }
 		
 		function onBackButton(){
@@ -72,6 +72,7 @@
             if (my_media) {
                 my_media.stop();
             }
+			my_media.release();
             clearInterval(mediaTimer);
             mediaTimer = null;
         }
@@ -106,6 +107,7 @@
         </script>
       </head>
       <body>
+		<br><br>
         <a href="#" class="btn large" onclick="playAudio('recit.mp3');">Play Audio</a>
 		<a href="#" class="btn large" onclick="playAudio('audio/tone.mp3');">Play Audio in folder</a>
         <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
