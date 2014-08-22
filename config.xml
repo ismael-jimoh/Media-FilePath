@@ -76,6 +76,7 @@
 	</gap:plugin>
 	
 	<gap:plugin name="nl.x-services.plugins.insomnia"/>
+	<gap:plugin name="nl.x-services.plugins.calendar" version="4.2.4" />
 	
 	<access origin="*" />
 

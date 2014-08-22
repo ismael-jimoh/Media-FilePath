@@ -12,6 +12,14 @@
 	document.addEventListener("deviceready", onDeviceReady, false);
 	document.removeEventListener("backbutton",onBackButton, false);
 	
+	var startDate = new Date(2014,8,15,18,0,0,0,0); // beware: month 0 = january, 11 = december
+	var endDate = new Date(2014,8,19,19,0,0,0,0);
+	var title = "My nice event";
+	var location = "Home";
+	var notes = "Some notes about this event.";
+	var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+	var error = function(message) { alert("Error: " + message); };
+	
 	// device APIs are available
     //
     function onDeviceReady() {
@@ -124,6 +132,10 @@
 	function onFail(message) {
       alert('Failed because: ' + message);
     }
+	
+	function addCalendar(){
+		window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+	}
 
     </script>
 	<style type="text/css">
@@ -158,6 +170,7 @@
 	</P>
 	<p><button onclick="scanCode();">Scan Code</button></p>
 	<p><button onclick="capturePhoto();">Take Picture</button></p>
+	<p><button onclick="addCalendar();">Add Event to Calendar</button></p>
 	<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
   </body>
 </html>
