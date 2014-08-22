@@ -134,7 +134,10 @@
     }
 	
 	function addCalendar(){
-		window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+		alert('Create Calendar event');
+		window.Calendar.createEvent(title, location, notes, startDate, endDate, 
+		function() {alert('success');}, 
+		function() {alert('fail');});
 	}
 
     </script>
