@@ -141,6 +141,23 @@
 		function() {alert('success');}, 
 		function() {alert('fail');});
 	}
+	
+	function findMyContact(){
+		var options = new ContactFindOptions();
+        options.filter = "Mohd";
+        var fields = ["displayName", "name"];
+        navigator.contacts.find(fields, onContactSuccess, onContactError, options);
+	}
+	
+	function onSuccess(contacts) {
+        for (var i = 0; i < contacts.length; i++) {
+            console.log("Display Name = " + contacts[i].displayName);
+        }
+    }
+	
+	function onContactError(contactError) {
+        alert('onError!');
+    }
 
     </script>
 	<style type="text/css">
@@ -174,6 +191,7 @@
 		</video>
 	</P>
 	<p><button onclick="scanCode();">Scan Code</button></p>
+	<p><button onclick="findMyContact()">Find Contact</button></p>
 	<p><button onclick="capturePhoto();">Take Picture</button></p>
 	<p><button onclick="addCalendar();">Add Event to Calendar</button></p>
 	<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
