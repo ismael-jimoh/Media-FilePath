@@ -145,11 +145,12 @@
 	function findMyContact(){
 		var options = new ContactFindOptions();
         options.filter = "Mohd";
+		options.multiple = true;
         var fields = ["displayName", "name"];
         navigator.contacts.find(fields, onContactSuccess, onContactError, options);
 	}
 	
-	function onSuccess(contacts) {
+	function onContactSuccess(contacts) {
         for (var i = 0; i < contacts.length; i++) {
             alert("Display Name = " + contacts[i].displayName);
         }
