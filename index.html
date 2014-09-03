@@ -143,17 +143,16 @@
 	}
 	
 	function findMyContact(){
-		var options = new ContactFindOptions();
-        options.filter = "Mohd";
+		var options      = new ContactFindOptions();
+		options.filter   = "Bob";
 		options.multiple = true;
-        var fields = ["displayName", "name"];
+		options.desiredFields = [navigator.contacts.fieldType.id];
+		var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
         navigator.contacts.find(fields, onContactSuccess, onContactError, options);
 	}
 	
 	function onContactSuccess(contacts) {
-        for (var i = 0; i < contacts.length; i++) {
-            alert("Display Name = " + contacts[i].displayName);
-        }
+        alert('Found ' + contacts.length + ' contacts.');
     }
 	
 	function onContactError(contactError) {
