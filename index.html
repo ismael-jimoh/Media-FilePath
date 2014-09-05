@@ -158,6 +158,10 @@
 	function onContactError(contactError) {
         alert('onError!');
     }
+	
+	function playLocalVideo(){
+		VideoPlayer.play("file:///android_asset/www/mov_bbb.mp4");
+	}
 
     </script>
 	<style type="text/css">
@@ -191,6 +195,7 @@
 		</video>
 	</P>
 	<p><button onclick="scanCode();">Scan Code</button></p>
+	<p><button onclick="playLocalVideo();">Play a video hosted locally</button></p>
 	<p><button onclick="findMyContact()">Find Contact</button></p>
 	<p><button onclick="capturePhoto();">Take Picture</button></p>
 	<p><button onclick="addCalendar();">Add Event to Calendar</button></p>
